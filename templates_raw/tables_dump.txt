@@ -1,0 +1,120 @@
+
+=== TABLE 1 (11 rows) ===
+Nama Lengkap | : | Mohammad Ammar Ayyasy, S.Kom.
+NI  P | : | -
+Jabatan | : | Guru
+Mapel | : | RPL
+Unit Kerja     (&#8730;  
+  ) | : | &#9633;   Manajemen      &#9633;   Asrama      &#9633;
+    SMP     SMK   &#9633;   General Affair                                            &#9633;        Pondok Tahfidz   &#9633;     
+   Lainnya .
+Lama Izin | : | 1 hari
+Mulai Izin | : | 22 Oktober 2026
+Masuk   K  embali Tgl | : | 23 Oktober 2026
+Alasan   Izin   (  &#8730;  ) | : | &#9633;   Saki  t                &#9633;     Datang Terlambat                          Pulang Cepat                    WFH                         Lainnya
+Keterangan Izin | : | Membantu saudara dari
+  Surabaya mengurus interview
+Status   Izin     (&#8730;  
+  )    
+    (Di isi HRD) | : | &#9633;      Memotong Tunjangan
+  Kehadiran    
+    &#9633;      Tidak Memotong Tunjangan
+  Kehadiran
+
+=== TABLE 2 (4 rows) ===
+&nbsp;    
+     PENGGANTI         SELAMA     IZIN
+           
+     (jika
+  tugas digantikan orang lain)         
+     &nbsp; | PENGGANTI
+Nama: | Mr Sanusi &amp; Mr Aldy
+Jabatan: | Guru
+Unit Kerja: | SMK IDN
+
+=== TABLE 3 (3 rows) ===
+Yang Mengajukan | Atasan
+&nbsp;   
+     &nbsp;   
+                                      
+    
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+    
+    
+    
+           
+     &nbsp;   
+    Nama       : Mohammad Ammar Ayyasy, S.Kom.    
+    Jabatan    : Guru RPL Kelas X | &nbsp;   
+     &nbsp;   
+     &nbsp;   
+     &nbsp;   
+     &nbsp;   
+     &nbsp;   
+     &nbsp;   
+     &nbsp;   
+    Nama       : Beny Fitriyanto, S.S.    
+    Jabatan    : Kepala Sekolah SMK IDN
+Tanggal :        22 Oktober 2026 | Tanggal :    22 Oktober     2026
+
+=== TABLE 4 (1 rows) ===
+Catatan :          
+        1. &nbsp;&nbsp;&nbsp;&nbsp;      Pegawai yang akan mengajukan izin meninggalkan pekerjaan diwajibkan
+    mengisi  Form Permohonan Izin Meninggalkan Pekerjaan  ( sesuai
+    format lampiran 1 );    
+        2. &nbsp;&nbsp;&nbsp;&nbsp;
+         Permohonan p  engajuan   izin yang dapat direncanakan
+    selambat-lambatnya 1 (Satu) minggu sebelum izin dilaksanakan, kecuali izin
+    karena ada  musibah/bencana/sakit/mendesak , form izin dapat
+    disampaikan pada hari H / hari pertama masuk kerja.      
+        3. &nbsp;&nbsp;&nbsp;&nbsp;
+         Izin karena sakit &#8805; 3 hari kerja wajib menyertakan surat keterangan
+    dokter.    
+        4. &nbsp;&nbsp;&nbsp;&nbsp;
+         Izin datang terlambat atau pulang cepat disampaikan pada hari yang
+    sama.    
+        5. &nbsp;&nbsp;&nbsp;&nbsp;
+         Form
+    izin yang telah disetujui oleh PUK/Atasan disampaikan ke H  RD untuk diarsipkan.      
+        6. &nbsp;&nbsp;&nbsp;&nbsp;
+         Untuk
+         Kolom pengganti selama izin          jika tugas digantikan orang lain.      
+        7. &nbsp;&nbsp;&nbsp;&nbsp;
+         Untuk
+    Wakasek/  koordinator/  guru/TU, atasan langsungnya adalah Kepala
+    Sekolah     dan atasan dari atasan langsung adalah Direktur
+    Pendidikan  .      
+        8. &nbsp;&nbsp;&nbsp;&nbsp;
+         Untuk
+    Musyrif  /Koordinator Sakan   atasan langsungnya adalah Kepala Asrama dan
+    atasan dari atasan langsung adalah   Wadir/  Direktur Pendidikan  .      
+        9. &nbsp;&nbsp;&nbsp;&nbsp;
+         Untuk
+      Staf General Affair
+    (Teknisi, OB, Satpam)   atasan
+    langsungnya adalah   Direktur General Affair  
+    dan atasan dari atasan langsung adalah   Ketua yayasan.      
+        10. &nbsp;
+         Untuk   Kepala Sekolah/Kepala Asrama/Manajer   atasan langsungnya adala  h Wakil/  Direktur Pendidikan  .      
+        11. &nbsp;
+         Untuk Mahasiswa/i   atasan
+    langsungnya adalah K  oordinator mahasiswa  
+    dan atasan dari atasan langsung adalah   Wakil/  Direktur Pendidikan  .      
+        12. &nbsp;
+         Setiap
+      unit kerja (Asrama,
+    SMP-SMK, GA, Pondok Tahfidz, Manajemen)   wajib mendokumentasikan copy   Form Pengajuan   izin karyawan.

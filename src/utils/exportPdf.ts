@@ -6,44 +6,65 @@ export async function exportElementToPdf(elementId: string, filename: string): P
     throw new Error(`Element with id "${elementId}" not found`);
   }
 
-  // Clone element to prevent any zoom transform or UI states from affecting the PDF
-  const clone = element.cloneNode(true) as HTMLElement;
-  clone.style.transform = 'none';
-  clone.style.margin = '0';
-  clone.style.boxShadow = 'none';
-  clone.style.position = 'fixed';
-  clone.style.top = '-99999px';
-  clone.style.left = '-99999px';
-  clone.style.zIndex = '-9999';
-  clone.style.width = '210mm';
-  clone.style.minHeight = '297mm';
-  clone.style.background = '#ffffff';
+  // Cari zoom wrapper (elemen dengan transform scale)
+  const zoomWrapper = element.closest('.origin-top') as HTMLElement | null;
+  const originalTransform = zoomWrapper ? zoomWrapper.style.transform : '';
 
-  document.body.appendChild(clone);
+  // Cari scroll container
+  const scrollContainer = element.closest('.overflow-y-auto') as HTMLElement | null;
+  const originalScrollTop = scrollContainer ? scrollContainer.scrollTop : 0;
+
+  // Cari bayangan luar
+  const shadowWrapper = element.parentElement as HTMLElement | null;
+  const originalShadow = shadowWrapper ? shadowWrapper.style.boxShadow : '';
+
+  // Reset transform, scroll, dan shadow sementara agar screenshot html2canvas 100% presisi A4 tanpa margin aneh
+  if (zoomWrapper) {
+    zoomWrapper.style.transform = 'none';
+  }
+  if (scrollContainer) {
+    scrollContainer.scrollTop = 0;
+  }
+  if (shadowWrapper) {
+    shadowWrapper.style.boxShadow = 'none';
+  }
+
+  // Beri waktu 100ms agar browser melakukan repaint pada skala asli 1:1
+  await new Promise((resolve) => setTimeout(resolve, 100));
 
   const opt = {
     margin: 0,
     filename: filename.endsWith('.pdf') ? filename : `${filename}.pdf`,
     image: { type: 'jpeg' as const, quality: 0.98 },
     html2canvas: {
-      scale: 2, // High resolution rendering
+      scale: 2, // Kualitas tajam 2x retina
       useCORS: true,
       logging: false,
       scrollY: 0,
-      scrollX: 0
+      scrollX: 0,
+      backgroundColor: '#ffffff'
     },
     jsPDF: {
       unit: 'mm',
       format: 'a4',
       orientation: 'portrait' as const
-    }
+    },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
   };
 
   try {
-    await html2pdf().set(opt).from(clone).save();
+    // Tangkap elemen yang ada di layar langsung (tanpa off-screen -99999px yang menyebabkan blank putih)
+    await html2pdf().set(opt).from(element).save();
   } finally {
-    if (document.body.contains(clone)) {
-      document.body.removeChild(clone);
+    // Kembalikan tampilan zoom, scroll, dan shadow ke semula
+    if (zoomWrapper) {
+      zoomWrapper.style.transform = originalTransform;
+    }
+    if (scrollContainer) {
+      scrollContainer.scrollTop = originalScrollTop;
+    }
+    if (shadowWrapper) {
+      shadowWrapper.style.boxShadow = originalShadow;
     }
   }
 }

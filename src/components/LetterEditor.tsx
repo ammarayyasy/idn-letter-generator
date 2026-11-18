@@ -258,9 +258,9 @@ export const LetterEditor: React.FC<LetterEditorProps> = ({ templateId, onBack }
           )}
         </div>
 
-        {/* Right Column: Dedicated Document Container (with Dark PDF Canvas Background & Inner Scroll) */}
+        {/* Right Column: Dedicated Document Container (with Dark PDF Canvas Background on Screen, Clean Reset on Print) */}
         <div
-          className={`print-only-container md:col-span-7 lg:col-span-7 h-[calc(100vh-120px)] flex flex-col rounded-2xl overflow-hidden border border-slate-300 shadow-md ${
+          className={`print-reset-wrapper md:col-span-7 lg:col-span-7 h-[calc(100vh-120px)] flex flex-col rounded-2xl overflow-hidden border border-slate-300 shadow-md ${
             activeMobileTab === 'preview' ? 'flex' : 'hidden md:flex'
           }`}
         >
@@ -300,20 +300,23 @@ export const LetterEditor: React.FC<LetterEditorProps> = ({ templateId, onBack }
           </div>
 
           {/* Dark Scrollable Canvas Workspace (PDF Viewer Canvas style) */}
-          <div className="flex-1 bg-slate-800/95 overflow-y-auto overflow-x-hidden p-4 sm:p-8 flex justify-center custom-scrollbar">
+          <div className="print-reset-wrapper flex-1 bg-slate-800/95 overflow-y-auto overflow-x-hidden p-4 sm:p-8 flex justify-center custom-scrollbar">
             {/* Scalable Container for A4 Sheet */}
             <div
-              className="origin-top transition-transform duration-150 ease-out"
+              className="print-reset-wrapper origin-top transition-transform duration-150 ease-out"
               style={{
                 transform: `scale(${zoom / 100})`,
                 transformOrigin: 'top center'
               }}
             >
-              {/* Printable Target Container captured by html2pdf */}
-              <div id="letter-printable-container" className="shadow-2xl ring-1 ring-black/20 rounded-sm">
-                {templateId === 'form-izin' && <FormIzinPreview data={izinData} />}
-                {templateId === 'form-lembur' && <FormLemburPreview data={lemburData} />}
-                {templateId === 'form-kasbon' && <FormKasbonPreview data={kasbonData} />}
+              {/* Outer Shadow Wrapper on Screen (Neutralized on print) */}
+              <div className="print-reset-wrapper shadow-2xl ring-1 ring-black/20 rounded-sm">
+                {/* Printable Target Container captured by html2pdf and print */}
+                <div id="letter-printable-container" className="bg-white">
+                  {templateId === 'form-izin' && <FormIzinPreview data={izinData} />}
+                  {templateId === 'form-lembur' && <FormLemburPreview data={lemburData} />}
+                  {templateId === 'form-kasbon' && <FormKasbonPreview data={kasbonData} />}
+                </div>
               </div>
             </div>
           </div>

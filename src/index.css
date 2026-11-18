@@ -8,60 +8,126 @@
   }
 }
 
-/* Print styling for A4 Letter */
+/* Screen Preview Styling */
+.a4-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  height: auto;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18mm 20mm 18mm 20mm;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  color: #1a1a1a;
+  position: relative;
+}
+
+/* Multi-page break protection */
+.avoid-break,
+.break-inside-avoid {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+}
+
+/* Print styling for A4 Letter (Clean, Zero dark margins, Multi-page friendly) */
 @media print {
   @page {
     size: A4 portrait;
     margin: 0;
   }
 
-  body {
-    background: transparent !important;
-    padding: 0 !important;
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
     margin: 0 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  /* Sembunyikan semua elemen UI kecuali lembar kertas surat */
-  .no-print {
+  /* Sembunyikan semua elemen UI layar */
+  .no-print,
+  header,
+  nav,
+  button {
     display: none !important;
   }
 
-  .print-only-container {
+  main {
     display: block !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100% !important;
-    margin: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Hilangkan background gelap, padding, scrollbar, dan border dari canvas container */
+  .print-reset-wrapper {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
     box-shadow: none !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    position: static !important;
+  }
+
+  #letter-printable-container {
+    display: block !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    max-width: 210mm !important;
   }
 
   .a4-sheet {
     box-shadow: none !important;
     border: none !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     width: 210mm !important;
+    max-width: 210mm !important;
     min-height: 297mm !important;
-    padding: 25mm 25mm 20mm 25mm !important; /* Standar margin surat resmi Indonesia (2.5cm) */
+    height: auto !important;
+    padding: 15mm 20mm 15mm 20mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    page-break-after: auto;
+  }
+
+  /* Proteksi tabel & tanda tangan agar tidak terbelah di perbatasan halaman */
+  table, tr, td, th {
+    page-break-inside: auto;
+  }
+
+  tr,
+  .avoid-break,
+  .break-inside-avoid,
+  .signature-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .page-break {
+    page-break-before: always !important;
+    break-before: always !important;
   }
 }
-
-/* Screen Preview Styling */
-.a4-sheet {
-  width: 210mm;
-  min-height: 297mm;
-  background: white;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 25mm 25mm 20mm 25mm;
-  box-sizing: border-box;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 12pt;
-  line-height: 1.5;
-  color: #1a1a1a;
-}
-

@@ -105,7 +105,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
       </table>
 
       {/* DISPOSISI / PERSETUJUAN HRD */}
-      <div className="border border-black p-2.5 mb-4 text-[9.5pt]">
+      <div className="border border-black p-2.5 mb-4 text-[9.5pt] avoid-break break-inside-avoid">
         <div className="flex items-start gap-4">
           <div className="w-36 font-bold">
             Disetujui / Ditolak<br />
@@ -141,7 +141,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
       </div>
 
       {/* REALISASI LEMBUR */}
-      <table className="w-full border-collapse border border-black mb-6 text-[10pt]">
+      <table className="w-full border-collapse border border-black mb-6 text-[10pt] avoid-break break-inside-avoid">
         <thead>
           <tr className="bg-slate-100 border-b border-black">
             <th colSpan={3} className="p-1.5 text-left font-semibold text-xs uppercase tracking-wide">
@@ -173,13 +173,13 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
         </tbody>
       </table>
 
-      {/* LOKASI DAN TANGGAL SURAT */}
-      <div className="text-right mb-2 text-[10pt] font-medium">
-        {data.kotaSurat}, {data.tanggalSurat}
-      </div>
+      {/* LOKASI, TANGGAL & TANDA TANGAN 3 KOLOM */}
+      <div className="avoid-break break-inside-avoid">
+        <div className="text-right mb-2 text-[10pt] font-medium">
+          {data.kotaSurat}, {data.tanggalSurat}
+        </div>
 
-      {/* TANDA TANGAN 3 KOLOM */}
-      <table className="w-full border-collapse border border-black text-[9.5pt]">
+        <table className="w-full border-collapse border border-black text-[9.5pt]">
         <thead>
           <tr className="border-b border-black bg-slate-50 text-center font-bold">
             <th className="w-1/3 p-1.5 border-r border-black">Diajukan Oleh,</th>
@@ -240,6 +240,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

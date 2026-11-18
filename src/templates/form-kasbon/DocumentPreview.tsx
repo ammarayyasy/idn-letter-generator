@@ -110,7 +110,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
       </table>
 
       {/* INFORMASI REKENING & KONTAK PEMOHON */}
-      <div className="border border-black p-3 mb-8 bg-slate-50/50 text-[10pt] rounded">
+      <div className="border border-black p-3 mb-6 bg-slate-50/50 text-[10pt] rounded avoid-break break-inside-avoid">
         <p className="font-semibold text-xs uppercase tracking-wide text-slate-700 mb-1">
           Informasi Pencairan & Kontak Pemohon:
         </p>
@@ -127,13 +127,13 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
         </div>
       </div>
 
-      {/* LOKASI DAN TANGGAL */}
-      <div className="text-right mb-3 text-[10.5pt] font-medium">
-        {data.lokasiSurat}, {data.tanggalSurat}
-      </div>
+      {/* LOKASI, TANGGAL & TANDA TANGAN 3 PIHAK */}
+      <div className="avoid-break break-inside-avoid">
+        <div className="text-right mb-3 text-[10.5pt] font-medium">
+          {data.lokasiSurat}, {data.tanggalSurat}
+        </div>
 
-      {/* TANDA TANGAN 3 PIHAK */}
-      <table className="w-full border-collapse border border-black text-[10pt]">
+        <table className="w-full border-collapse border border-black text-[10pt]">
         <thead>
           <tr className="border-b border-black bg-slate-50 text-center font-bold">
             <th className="w-1/3 p-2 border-r border-black">Pemohon,</th>
@@ -189,6 +189,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

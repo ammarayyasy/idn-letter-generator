@@ -153,7 +153,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
 
       {/* TABEL PENGGANTI SELAMA IZIN */}
       {data.adaPengganti && (
-        <table className="w-full border-collapse border border-black mb-3 text-[10pt]">
+        <table className="w-full border-collapse border border-black mb-3 text-[10pt] avoid-break break-inside-avoid">
           <thead>
             <tr className="bg-slate-100 border-b border-black text-left">
               <th colSpan={3} className="p-1.5 font-semibold text-xs uppercase tracking-wide">
@@ -182,7 +182,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
       )}
 
       {/* TABEL TANDA TANGAN (YANG MENGAJUKAN & ATASAN) */}
-      <table className="w-full border-collapse border border-black mb-3 text-[9.5pt]">
+      <table className="w-full border-collapse border border-black mb-3 text-[9.5pt] avoid-break break-inside-avoid">
         <thead>
           <tr className="border-b border-black bg-slate-50 text-center font-bold">
             <th className="w-1/2 p-1.5 border-r border-black">Yang Mengajukan</th>
@@ -236,7 +236,7 @@ export const DocumentPreview: React.FC<DocumentPreviewProps> = ({ data }) => {
       </table>
 
       {/* CATATAN RESMI IDN BOARDING SCHOOL */}
-      <div className="border border-black p-2 text-[7.5pt] leading-tight text-slate-800">
+      <div className="border border-black p-2 text-[7.5pt] leading-tight text-slate-800 avoid-break break-inside-avoid">
         <p className="font-bold uppercase mb-1">Catatan Regulasi IDN Boarding School:</p>
         <ol className="list-decimal pl-3 space-y-0.5">
           <li>Pegawai yang akan mengajukan izin meninggalkan pekerjaan diwajibkan mengisi "Form Permohonan Izin Meninggalkan Pekerjaan" (sesuai format lampiran 1).</li>
